@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:id="@+id/country_card">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:padding="8dp">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:id="@+id/flag"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/logo"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/flag"
+            android:layout_marginLeft="8dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/app_name"
+            android:layout_toLeftOf="@id/fav"
+            android:id="@+id/name"
+            android:layout_alignTop="@id/flag"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/name"
+            android:layout_below="@id/name"
+            android:id="@+id/code"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/app_name"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/code"
+            android:layout_below="@id/name"
+            android:layout_marginLeft="8dp"
+            android:layout_alignTop="@id/code"
+            android:id="@+id/prefix"
+            android:layout_toLeftOf="@id/fav"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/app_name"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fav"
+            android:tint="@color/colorPrimaryDark"
+            android:src="@drawable/outline_star_border_black_48"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

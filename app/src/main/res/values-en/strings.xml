@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Xountries</string>
+    <string name="no_more_results">No more results</string>
+    <string name="aceptar">OK</string>
+    <string name="country_code">Code: %s</string>
+    <string name="phone_prefix">Phone Prefix: %s</string>
+    <string name="fav">Favorites</string>
+    <string name="favorite_updated">Updated favorites</string>
+    <string name="favorite_replace">Favorites: %s</string>
+    <string name="slide_one_title">Welcome to Xountries!</string>
+    <string name="slide_one_desc">This application is part of the evaluation for Xoom</string>
+    <string name="slide_two_title">Mark your favorites</string>
+    <string name="slide_two_desc">We send money to many countries, but you will have the ones you prefer</string>
+    <string name="slide_three_title">Show favorites</string>
+    <string name="slide_three_desc">Show all countries or just your favorites</string>
+    <string name="slide_four_title">See the information</string>
+    <string name="slide_four_desc">Touching the country you can see information in a pop-up window</string>
+    <string name="slide_end_title">We are ready!</string>
+    <string name="slide_end_desc">Start selecting your countries</string>
+    <string name="total_replace">Total: %s</string>
+</resources>
