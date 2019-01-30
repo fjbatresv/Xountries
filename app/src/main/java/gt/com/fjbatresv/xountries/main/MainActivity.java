@@ -2,7 +2,10 @@ package gt.com.fjbatresv.xountries.main;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.net.wifi.WifiManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,9 +42,10 @@ import gt.com.fjbatresv.xountries.entitys.Country;
 import gt.com.fjbatresv.xountries.entitys.CountryAnswer;
 import gt.com.fjbatresv.xountries.lib.base.ImageLoader;
 import gt.com.fjbatresv.xountries.main.adapters.CountriesAdapter;
+import gt.com.fjbatresv.xountries.receiver.ConnectivityReceiver;
 import gt.com.fjbatresv.xountries.util.Functions;
 
-public class MainActivity extends AppCompatActivity implements MainView, ClickListener {
+public class MainActivity extends AppCompatActivity implements MainView, ClickListener, ConnectivityReceiver.ConnectivityReceiverListener {
 
     @BindView(R.id.countries)
     RecyclerView countries;
@@ -53,6 +57,9 @@ public class MainActivity extends AppCompatActivity implements MainView, ClickLi
     RecyclerViewFastScroller fastScroller;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+    @BindView(R.id.connection_status)
+    TextView connectionStatus;
+
 
     @BindString(R.string.total_replace)
     String totalReplace;
@@ -66,10 +73,10 @@ public class MainActivity extends AppCompatActivity implements MainView, ClickLi
     String favoriteUpdated;
     @BindString(R.string.favorite_replace)
     String favoriteReplace;
-    @BindString(R.string.toggle_fav_info)
-    String toggleFavIntro;
-    @BindString(R.string.fav_intro)
-    String favIntro;
+    @BindString(R.string.ok_connection)
+    String okConnection;
+    @BindString(R.string.no_connection)
+    String noConnection;
 
     @BindDrawable(R.drawable.outline_star_border_white_48)
     Drawable starBoderWhite;
@@ -100,7 +107,17 @@ public class MainActivity extends AppCompatActivity implements MainView, ClickLi
         setSupportActionBar(toolbar);
         presenter.onCreate();
         setRecycler();
+        connectionChange();
         presenter.getCountries(page);
+    }
+
+    private void connectionChange() {
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(WifiManager.SUPPLICANT_CONNECTION_CHANGE_ACTION);
+        intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+        intentFilter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
+        registerReceiver(new ConnectivityReceiver(), intentFilter);
+        onNetworkConnectionChanged(ConnectivityReceiver.isConnected());
     }
 
     @Override
@@ -263,5 +280,26 @@ public class MainActivity extends AppCompatActivity implements MainView, ClickLi
         });
         builder.setView(view);
         this.dialog = builder.show();
+    }
+
+    @Override
+    public void onNetworkConnectionChanged(boolean isConnected) {
+        presenter.setConnectionStatus(isConnected);
+        if (isConnected) {
+            this.connectionStatus.setText(okConnection);
+            this.connectionStatus.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+            this.connectionStatus.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+            this.connectionStatus.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    connectionStatus.setVisibility(android.view.View.GONE);
+                }
+            }, 3000);
+        } else if (!isConnected) {
+            this.connectionStatus.setBackgroundColor(getResources().getColor(R.color.colorRed));
+            this.connectionStatus.setText(noConnection);
+            this.connectionStatus.setTextColor(Color.WHITE);
+            this.connectionStatus.setVisibility(android.view.View.VISIBLE);
+        }
     }
 }

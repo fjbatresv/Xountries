@@ -70,4 +70,9 @@ public class MainPresenterImpl implements MainPresenter {
         view.loading(true);
         interactor.validateIntro();
     }
+
+    @Override
+    public void setConnectionStatus(boolean isConnected) {
+        interactor.setConnectionStatus(isConnected);
+    }
 }

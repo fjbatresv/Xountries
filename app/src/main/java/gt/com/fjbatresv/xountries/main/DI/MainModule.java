@@ -67,8 +67,8 @@ public class MainModule {
 
     @Provides
     @Singleton
-    MainRepo providesMainRepo(CountriesService service, EventBus bus, SharedPreferences preferences){
-        return new MainRepoImpl(service, bus, preferences);
+    MainRepo providesMainRepo(CountriesService service, EventBus bus, SharedPreferences preferences, Context context){
+        return new MainRepoImpl(service, bus, preferences, context);
     }
 
     @Provides

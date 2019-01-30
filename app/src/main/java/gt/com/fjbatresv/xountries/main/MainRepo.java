@@ -6,4 +6,5 @@ public interface MainRepo {
     void getCountries(int page);
     void addFav(Country o);
     void validateIntro();
+    void setConnectionStatus(boolean isConnected);
 }

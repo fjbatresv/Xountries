@@ -13,4 +13,6 @@ public interface MainPresenter {
     void addFav(Country o);
 
     void validateIntro();
+
+    void setConnectionStatus(boolean isConnected);
 }

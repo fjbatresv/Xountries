@@ -19,11 +19,13 @@ public class MainRepoImpl implements MainRepo {
     private CountriesService service;
     private EventBus bus;
     private SharedPreferences preferences;
+    private Context context;
 
-    public MainRepoImpl(CountriesService service, EventBus bus, SharedPreferences preferences) {
+    public MainRepoImpl(CountriesService service, EventBus bus, SharedPreferences preferences, Context context) {
         this.service = service;
         this.bus = bus;
         this.preferences = preferences;
+        this.context = context;
     }
 
     @Override
@@ -43,7 +45,11 @@ public class MainRepoImpl implements MainRepo {
                 bus.post(new Event(t.getLocalizedMessage()));
             }
         };
-        service.getCountries(20, page).enqueue(callback);
+        if (preferences.getBoolean("connection", true)) {
+            service.getCountries(20, page).enqueue(callback);
+        }else{
+            bus.post(new Event(context.getString(R.string.no_connection_result)));
+        }
     }
 
     @Override
@@ -62,5 +68,12 @@ public class MainRepoImpl implements MainRepo {
             editor.commit();
         }
         bus.post(new Event(Event.validIntro, intro));
+    }
+
+    @Override
+    public void setConnectionStatus(boolean isConnected) {
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("connection", isConnected);
+        editor.commit();
     }
 }

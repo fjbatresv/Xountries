@@ -24,4 +24,9 @@ public class MainIntImpl implements MainInt {
     public void validateIntro() {
         repo.validateIntro();
     }
+
+    @Override
+    public void setConnectionStatus(boolean isConnected) {
+        repo.setConnectionStatus(isConnected);
+    }
 }

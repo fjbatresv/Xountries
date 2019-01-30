@@ -19,4 +19,7 @@
     <string name="slide_end_title">We are ready!</string>
     <string name="slide_end_desc">Start selecting your countries</string>
     <string name="total_replace">Total: %s</string>
+    <string name="ok_connection">Connection back online</string>
+    <string name="no_connection">Connection offline</string>
+    <string name="no_connection_result">Check your internet connection and try again</string>
 </resources>

@@ -18,6 +18,18 @@
             android:layout_height="60dp"
             android:background="@color/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
+        <TextView
+            android:id="@+id/connection_status"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/no_connection"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorAccent"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:textColor="@android:color/white"/>
 
     </android.support.design.widget.AppBarLayout>
 

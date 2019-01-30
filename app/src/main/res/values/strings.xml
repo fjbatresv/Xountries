@@ -18,4 +18,7 @@
     <string name="slide_four_desc">Tocando el pais podras ver información en una ventana emergente</string>
     <string name="slide_end_title">¡Estamos listos!</string>
     <string name="slide_end_desc">Empieza a seleccionar tus países</string>
+    <string name="ok_connection">Conectado a internet</string>
+    <string name="no_connection">No hay conexión a internet</string>
+    <string name="no_connection_result">Revisa tú conexión a internet e intetalo más tarde</string>
 </resources>
