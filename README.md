@@ -2,7 +2,7 @@
 Android aplication showing a list of countries managing RecyclerView and saving favorites.
 
 On this application i have used an api for get the complete list of countries managing pagination for load on groups of 20 items. Using DBFlow for a manage an SQLite where we store the favorite countrys using like **PrimaryKey** the country code.
-
+    
 ## Libraries
 
 The libraries used on this project are:
