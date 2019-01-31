@@ -27,7 +27,7 @@ You can find a three elements verifying the results of the robo tests
 
 #### Portrait Video
 
-<center><video controls ><source src="test%20results/20193001_1535/Portrait%20Video.mp4" type="video/mp4">Your browser not supports video</video></center>
+<center><video src="test%20results/20193001_1535/Portrait%20Video.mp4" controls=""></video></center>
     
 ## Libraries
 
