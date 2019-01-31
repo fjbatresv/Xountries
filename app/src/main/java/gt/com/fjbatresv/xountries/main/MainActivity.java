@@ -118,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements MainView, ClickLi
         intentFilter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
         registerReceiver(new ConnectivityReceiver(), intentFilter);
         onNetworkConnectionChanged(ConnectivityReceiver.isConnected());
+        app.setConnectivityListener(this);
     }
 
     @Override
