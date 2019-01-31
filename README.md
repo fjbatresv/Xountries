@@ -42,6 +42,6 @@ The libraries used on this project are:
 - [Tango Android Material Intro](https://github.com/AppIntro/AppIntro)
 - [Fast Scroll RecyclerView](https://github.com/AndroidDeveloperLB/LollipopContactsRecyclerViewFastScroller)
 
-## Conttributors
+## Contributors
 - [Javier Batres](https://github.com/fjbatresv) (Developer)
 - [Rodrigo Cano](https://github.com/rodjcano) (Image designer)
