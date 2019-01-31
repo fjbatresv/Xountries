@@ -26,9 +26,8 @@ You can find a three elements verifying the results of the robo tests
 <center><img src="test%20results/20193001_1535/Performance%20metrics.png" alt="Performance Metrics" height="200" /></center>
 
 #### Portrait Video
+<a href="https://youtu.be/SinQxT4WVL4" target="_blank"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/youtube-512.png" height="100" /></a>
 
-<center><video src="test%20results/20193001_1535/Portrait%20Video.mp4" controls=""></video></center>
-    
 ## Libraries
 
 The libraries used on this project are:
