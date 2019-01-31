@@ -44,4 +44,4 @@ The libraries used on this project are:
 
 ## Contributors
 - [Javier Batres](https://github.com/fjbatresv) (Developer)
-- [Rodrigo Cano](https://github.com/rodjcano) (Image designer)
+- [Rodrigo Cano](https://github.com/rodjcano) (Logo designer)
